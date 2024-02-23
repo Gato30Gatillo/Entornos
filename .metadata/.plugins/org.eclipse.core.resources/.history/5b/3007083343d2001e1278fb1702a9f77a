@@ -1,0 +1,146 @@
+package ejemploTienda;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+
+import ejemploTienda.modelo.Cliente;
+
+import java.awt.Color;
+
+public class InsertarCliente extends JDialog {
+
+	private static final long serialVersionUID = 1L;
+	private final JPanel contentPanel = new JPanel();
+	private JTextField txtDniDialogo;
+	private JTextField txtNombreDialogo;
+	private JTextField txtApellidosDialogo;
+	private Cliente clienteInsertado;
+	private AppTienda appTienda;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			InsertarCliente dialog = new InsertarCliente();
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+			dialog.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+
+	public AppTienda getAppTienda() {
+		return appTienda;
+	}
+
+
+
+	public void setAppTienda(AppTienda appTienda) {
+		this.appTienda = appTienda;
+	}
+
+
+
+	/**
+	 * Create the dialog.
+	 */
+	public InsertarCliente() {
+		
+		this.appTienda=appTienda;
+		
+		setBounds(100, 100, 810, 526);
+		getContentPane().setLayout(null);
+		contentPanel.setBounds(0, 0, 794, 456);
+		contentPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		getContentPane().add(contentPanel);
+		contentPanel.setLayout(null);
+		{
+			JLabel lblDni = new JLabel("Dni");
+			lblDni.setFont(new Font("Tahoma", Font.PLAIN, 13));
+			lblDni.setBounds(224, 63, 128, 20);
+			contentPanel.add(lblDni);
+		}
+		{
+			txtDniDialogo = new JTextField();
+			txtDniDialogo.setText((String) null);
+			txtDniDialogo.setColumns(10);
+			txtDniDialogo.setBounds(357, 64, 120, 20);
+			contentPanel.add(txtDniDialogo);
+		}
+		{
+			txtNombreDialogo = new JTextField();
+			txtNombreDialogo.setText((String) null);
+			txtNombreDialogo.setColumns(10);
+			txtNombreDialogo.setBounds(357, 107, 120, 20);
+			contentPanel.add(txtNombreDialogo);
+		}
+		{
+			JLabel lblNombreCliente = new JLabel("Nombre del cliente");
+			lblNombreCliente.setFont(new Font("Tahoma", Font.PLAIN, 13));
+			lblNombreCliente.setBounds(224, 106, 128, 20);
+			contentPanel.add(lblNombreCliente);
+		}
+		{
+			JLabel lblApellidosCliente = new JLabel("Apellidos del cliente:");
+			lblApellidosCliente.setFont(new Font("Tahoma", Font.PLAIN, 13));
+			lblApellidosCliente.setBounds(224, 157, 128, 20);
+			contentPanel.add(lblApellidosCliente);
+		}
+		{
+			txtApellidosDialogo = new JTextField();
+			txtApellidosDialogo.setText((String) null);
+			txtApellidosDialogo.setColumns(10);
+			txtApellidosDialogo.setBounds(357, 158, 120, 20);
+			contentPanel.add(txtApellidosDialogo);
+		}
+		{
+			JPanel buttonPane = new JPanel();
+			
+			buttonPane.setBounds(360, 454, 434, 33);
+			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			getContentPane().add(buttonPane);
+			{
+				JButton okButton = new JButton("OK");
+					okButton.addActionListener(new ActionListener()) (
+						public void actionPerformed(ActionEvent e) {
+							
+							clienteInsertado = 
+									new Cliente(txtNombreDialogo.getText(),txtApellidoDialogo.getText(),txtDniDialogo.getText());
+							
+							appTienda.setEsInsertado(True);
+							appTienda.setClienteInsertado(clienteInsertado);
+							dispose();
+							
+							
+						});
+				
+				
+				okButton.setActionCommand("OK");
+				buttonPane.add(okButton);
+				getRootPane().setDefaultButton(okButton);
+			}
+			{
+				JButton cancelButton = new JButton("Cancel");
+				cancel
+				cancelButton.setActionCommand("Cancel");
+				buttonPane.add(cancelButton);
+			}
+		}
+	}
+
+
+}

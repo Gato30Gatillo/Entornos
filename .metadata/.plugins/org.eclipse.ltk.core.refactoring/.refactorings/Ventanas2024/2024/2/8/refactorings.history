@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 2 elements to &apos;Ventanas2024/src/ejemploTienda.modelo&apos;&#x0D;&#x0A;- Original project: &apos;Ventanas2024&apos;&#x0D;&#x0A;- Destination element: &apos;Ventanas2024/src/ejemploTienda.modelo&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Cliente.java&#x0D;&#x0A;     Tienda.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="/src&lt;ejemploTienda.modelo" element1="/src&lt;{Cliente.java" element2="/src&lt;{Tienda.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1708680449310" units="2" version="1.0"/>
+</session>

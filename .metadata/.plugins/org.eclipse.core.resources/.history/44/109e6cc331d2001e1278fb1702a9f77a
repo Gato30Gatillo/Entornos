@@ -1,0 +1,116 @@
+package ejemploTienda;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+
+public class AppTienda {
+
+	private JFrame frame;
+	private JTextField txtNombreTienda;
+	private JTextField txtDireccionTienda;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					AppTienda window = new AppTienda();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public AppTienda() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1326, 791);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panelTienda = new JPanel();
+		panelTienda.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panelTienda.setBounds(100, 74, 560, 425);
+		frame.getContentPane().add(panelTienda);
+		panelTienda.setLayout(null);
+		
+		JLabel lblNombreTienda = new JLabel("Nombre de tienda:");
+		lblNombreTienda.setBounds(45, 54, 125, 14);
+		lblNombreTienda.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelTienda.add(lblNombreTienda);
+		
+		txtNombreTienda = new JTextField();
+		txtNombreTienda.setBounds(204, 53, 187, 20);
+		txtNombreTienda.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		panelTienda.add(txtNombreTienda);
+		txtNombreTienda.setColumns(10);
+		
+		JLabel lblDireccionTienda = new JLabel("Dirección de tienda:");
+		lblDireccionTienda.setBounds(45, 96, 125, 14);
+		lblDireccionTienda.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelTienda.add(lblDireccionTienda);
+		
+		txtDireccionTienda = new JTextField();
+		txtDireccionTienda.setBounds(204, 95, 187, 20);
+		txtDireccionTienda.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		txtDireccionTienda.setColumns(10);
+		panelTienda.add(txtDireccionTienda);
+		
+		JButton btnModificarTienda = new JButton("Modificar");
+		btnModificarTienda.setBounds(266, 274, 125, 53);
+		btnModificarTienda.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelTienda.add(btnModificarTienda);
+		
+		JLabel lblClientes = new JLabel("Clientes:");
+		lblClientes.setBounds(45, 143, 125, 14);
+		lblClientes.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelTienda.add(lblClientes);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(204, 141, 187, 22);
+		panelTienda.add(comboBox);
+		
+		JLabel lblAplicacionTienda = new JLabel("Aplicación Tienda");
+		lblAplicacionTienda.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		lblAplicacionTienda.setBounds(280, 11, 293, 27);
+		frame.getContentPane().add(lblAplicacionTienda);
+		
+		JLabel lblTienda = new JLabel("Tienda");
+		lblTienda.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblTienda.setBounds(337, 49, 98, 14);
+		frame.getContentPane().add(lblTienda);
+		
+		JPanel panelTienda_1 = new JPanel();
+		panelTienda_1.setLayout(null);
+		panelTienda_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		panelTienda_1.setBounds(705, 74, 560, 425);
+		frame.getContentPane().add(panelTienda_1);
+		
+		JLabel lblCliente = new JLabel("Cliente");
+		lblCliente.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblCliente.setBounds(946, 52, 98, 14);
+		frame.getContentPane().add(lblCliente);
+	}
+}

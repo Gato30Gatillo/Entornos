@@ -1,0 +1,98 @@
+package Ejemplolisteners2;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class VentanaListeners {
+
+	private JFrame frame;
+	private JTextField textField;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					VentanaListeners window = new VentanaListeners();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public VentanaListeners() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 556, 443);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Nombre");
+		lblNewLabel.setBounds(32, 27, 46, 14);
+		frame.getContentPane().add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setBounds(101, 24, 86, 20);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(331, 234, 188, 121);
+		frame.getContentPane().add(scrollPane);
+		
+		JTextArea textArea = new JTextArea();
+		scrollPane.setViewportView(textArea);
+		
+		textField.getDocument().addDocumentListener(
+				
+				new DocumentListener() {
+
+					@Override
+					public void insertUpdate(DocumentEvent e) {
+						// TODO Auto-generated method stub
+						warn();
+					}
+
+					@Override
+					public void removeUpdate(DocumentEvent e) {
+						// TODO Auto-generated method stub
+						warn();
+					}
+
+					@Override
+					public void changedUpdate(DocumentEvent e) {
+						// TODO Auto-generated method stub
+						warn();
+						
+					}
+					private void warn() {
+						textArea.append("CambioDeTexto:"+ textField.getText()+ "\n");
+					}
+					
+				}
+				
+				);
+		
+		
+	}
+}

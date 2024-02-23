@@ -1,0 +1,191 @@
+package Ejemplolisteners2;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+
+import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import java.awt.event.FocusEvent;
+
+import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
+import javax.swing.JCheckBox;
+
+
+public class VentanaListeners {
+
+   private JFrame frame;
+   private JTextField textField;
+   private JTextArea textArea;
+   private JLabel lblGenero;
+   private ButtonGroup cbg;
+   
+
+   /**
+    * Launch the application.
+    */
+   public static void main(String[] args) {
+       EventQueue.invokeLater(new Runnable() {
+           public void run() {
+               try {
+                   VentanaListeners window = new VentanaListeners();
+                   window.frame.setVisible(true);
+               } catch (Exception e) {
+                   e.printStackTrace();
+               }
+           }
+       });
+   }
+
+   /**
+    * Create the application.
+    */
+   public VentanaListeners() {
+       initialize();
+   }
+
+   /**
+    * Initialize the contents of the frame.
+    */
+   private void initialize() {
+       frame = new JFrame();
+       frame.setBounds(100, 100, 1309, 791);
+       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       frame.getContentPane().setLayout(null);
+       
+       JLabel lblNombre = new JLabel("Nombre:");
+       lblNombre.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       lblNombre.setBounds(158, 76, 127, 13);
+       frame.getContentPane().add(lblNombre);
+       
+       textField = new JTextField();
+       textField.addFocusListener(new FocusAdapter() {
+           @Override
+           public void focusGained(FocusEvent e) {
+               
+               textField.transferFocus();
+               JOptionPane.showMessageDialog(frame, "Focus ganado");
+   
+               
+               
+           }
+       });
+   
+       textField.setBounds(294, 75, 196, 29);
+       frame.getContentPane().add(textField);
+       textField.setColumns(10);
+       
+       JScrollPane scrollPane = new JScrollPane();
+       scrollPane.setBounds(793, 410, 418, 312);
+       frame.getContentPane().add(scrollPane);
+       
+       textArea = new JTextArea();
+       scrollPane.setViewportView(textArea);
+       
+       lblGenero = new JLabel("Género:");
+       lblGenero.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       lblGenero.setBounds(162, 138, 109, 17);
+       frame.getContentPane().add(lblGenero);
+       
+
+       
+       textField.getDocument().addDocumentListener(
+               
+               new DocumentListener() {
+
+                   @Override
+                   public void insertUpdate(DocumentEvent e) {
+                       // TODO Auto-generated method stub
+                       
+                       warn();
+                       
+                   }
+
+                   @Override
+                   public void removeUpdate(DocumentEvent e) {
+                       // TODO Auto-generated method stub
+                       
+                   }
+
+                   @Override
+                   public void changedUpdate(DocumentEvent e) {
+                       // TODO Auto-generated method stub
+                       warn();
+                   }
+                   
+                   
+                    private void warn() {
+                   
+                       textArea.append("CambioDeTexto:"+ textField.getText() +"\n");
+                    }
+                   
+                   
+                   
+               }
+               
+               
+               );
+       
+           
+           JCheckBox chckMasculino = new JCheckBox("Masculino");
+           chckMasculino.setFont(new Font("Tahoma", Font.PLAIN, 14));
+           chckMasculino.setBounds(294, 138, 93, 21);
+           frame.getContentPane().add(chckMasculino);
+           
+           JCheckBox chckFemenido = new JCheckBox("Femenino");
+           chckFemenido.setFont(new Font("Tahoma", Font.PLAIN, 14));
+           chckFemenido.setBounds(408, 138, 93, 21);
+           frame.getContentPane().add(chckFemenido);
+       
+           
+           cbg = new ButtonGroup ();
+
+           cbg.add(chckMasculino);
+           cbg.add(chckFemenido);
+           
+           
+           ButtonModel masc= chckMasculino.getModel();
+           ButtonModel fem= chckFemenido.getModel();
+           
+           
+           ActionListener action = new ActionListener() {
+
+               @Override
+               public void actionPerformed(ActionEvent e) {
+                   // TODO Auto-generated method stub
+                   
+                   if (cbg.getSelection()!=null) {
+                       
+                       if (cbg.getSelection().equals(masc)) {
+                           
+                           textArea.append("Seleccionaste masculino\n");
+                           
+                       } else {
+                           
+                           textArea.append("Seleccionaste femenino\n");
+                       }
+                   }
+                   
+               }
+               
+               
+           };
+           
+           masc.addActionListener(action);
+           fem.addActionListener(action);
+           
+       
+       
+   }
+}

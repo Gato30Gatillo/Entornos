@@ -1,0 +1,282 @@
+package ejemploTienda;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+import javax.swing.border.LineBorder;
+
+import ejemploTienda.modelo.Cliente;
+import ejemploTienda.modelo.Tienda;
+import ejemplosliistener.modelo.Persona;
+
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.JTextField;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class AppTienda {
+
+	private JFrame frame;
+	private JTextField txtNombreTienda;
+	private JTextField txtDireccionTienda;
+	private JTextField txtDni;
+	private JTextField txtNombreCliente;
+	private JTextField txtApellidosCliente;
+	private JComboBox cmbClientes;
+	private JButton btnModificarTienda;
+	private JButton btnModificarCliente;
+	
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					AppTienda window = new AppTienda();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public AppTienda() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 1326, 791);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JPanel panelTienda = new JPanel();
+		panelTienda.setBounds(100, 74, 560, 425);
+		panelTienda.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		frame.getContentPane().add(panelTienda);
+		panelTienda.setLayout(null);
+		
+		JLabel lblNombreTienda = new JLabel("Nombre de tienda:");
+		lblNombreTienda.setBounds(45, 54, 125, 14);
+		lblNombreTienda.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelTienda.add(lblNombreTienda);
+		
+		txtNombreTienda = new JTextField();
+		txtNombreTienda.setBounds(204, 53, 250, 20);
+		txtNombreTienda.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		panelTienda.add(txtNombreTienda);
+		txtNombreTienda.setColumns(10);
+		
+		JLabel lblDireccionTienda = new JLabel("Dirección de tienda:");
+		lblDireccionTienda.setBounds(45, 96, 125, 14);
+		lblDireccionTienda.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelTienda.add(lblDireccionTienda);
+		
+		txtDireccionTienda = new JTextField();
+		txtDireccionTienda.setBounds(204, 95, 250, 20);
+		txtDireccionTienda.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		txtDireccionTienda.setColumns(10);
+		panelTienda.add(txtDireccionTienda);
+		
+		btnModificarTienda = new JButton("Modificar");
+		btnModificarTienda.setBounds(266, 274, 125, 53);
+		btnModificarTienda.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelTienda.add(btnModificarTienda);
+		
+		JLabel lblClientes = new JLabel("Clientes:");
+		lblClientes.setBounds(45, 143, 125, 14);
+		lblClientes.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelTienda.add(lblClientes);
+		
+		cmbClientes = new JComboBox();
+		cmbClientes.setBounds(204, 141, 187, 22);
+		panelTienda.add(cmbClientes);
+		
+		JLabel lblAplicacionTienda = new JLabel("Aplicación Tienda");
+		lblAplicacionTienda.setBounds(280, 11, 293, 27);
+		lblAplicacionTienda.setFont(new Font("Tahoma", Font.PLAIN, 22));
+		frame.getContentPane().add(lblAplicacionTienda);
+		
+		JLabel lblTienda = new JLabel("Tienda");
+		lblTienda.setBounds(337, 49, 98, 14);
+		lblTienda.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		frame.getContentPane().add(lblTienda);
+		
+		JPanel panelTienda_1 = new JPanel();
+		panelTienda_1.setBounds(705, 74, 560, 425);
+		panelTienda_1.setBorder(new LineBorder(new Color(0, 0, 0), 2));
+		frame.getContentPane().add(panelTienda_1);
+		panelTienda_1.setLayout(null);
+		
+		JLabel lblDni = new JLabel("Dni");
+		lblDni.setBounds(42, 47, 128, 20);
+		lblDni.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelTienda_1.add(lblDni);
+		
+		txtDni = new JTextField();
+		txtDni.setBounds(200, 48, 300, 20);
+		panelTienda_1.add(txtDni);
+		txtDni.setColumns(10);
+		
+		JLabel lblNombreCliente = new JLabel("Nombre del cliente");
+		lblNombreCliente.setBounds(42, 90, 128, 20);
+		lblNombreCliente.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelTienda_1.add(lblNombreCliente);
+		
+		txtNombreCliente = new JTextField();
+		txtNombreCliente.setBounds(200, 91, 300, 20);
+		txtNombreCliente.setColumns(10);
+		panelTienda_1.add(txtNombreCliente);
+		
+		JLabel lblApellidosCliente = new JLabel("Apellidos del cliente:");
+		lblApellidosCliente.setBounds(42, 141, 128, 20);
+		lblApellidosCliente.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		panelTienda_1.add(lblApellidosCliente);
+		
+		txtApellidosCliente = new JTextField();
+		txtApellidosCliente.setBounds(200, 142, 300, 20);
+		txtApellidosCliente.setColumns(10);
+		panelTienda_1.add(txtApellidosCliente);
+		
+		btnModificarCliente = new JButton("Modificar");
+		btnModificarCliente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				if(cmbClientes.getSelectedItem() instanceof Cliente) {
+					
+					Cliente c1 = (Cliente) cmbClientes.getSelectedItem();
+					
+					c1.setDni(txtDni.getText());
+					c1.setNombre(txtNombreCliente.getText());
+					c1.setApellidos(txtApellidosCliente.getText());
+					panelTienda.updateUI();
+				}
+			
+			
+			}
+		});
+		btnModificarCliente.setBounds(350, 269, 125, 53);
+		btnModificarCliente.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		panelTienda_1.add(btnModificarCliente);
+		
+		JButton btnInsertarCliente = new JButton("Insertar");
+		btnInsertarCliente.addActionListener (
+		
+				(e)-> {
+				
+				InsertarCliente dialog = new InsertarCliente();
+				dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				dialog.setVisible(false);
+				
+				dialog.setModal(true);
+				
+				
+				}
+		);
+		btnInsertarCliente.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnInsertarCliente.setBounds(28, 269, 125, 53);
+		panelTienda_1.add(btnInsertarCliente);
+		
+		JLabel lblCliente = new JLabel("Cliente");
+		lblCliente.setBounds(946, 52, 98, 14);
+		lblCliente.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		frame.getContentPane().add(lblCliente);
+		
+		
+		bootStrap();
+	}
+	
+	
+	private void bootStrap() {
+		
+		Cliente cl= new Cliente("Jesus","Soto","456231546");
+		Cliente cl2= new Cliente("Pablo","Martinez","555555555");
+		
+		Tienda t1 = new Tienda("Software J&P","C. San Vicente Paul, 22, 23740");
+		
+		t1.addCliente(cl);
+		t1.addCliente(cl2);
+		
+		txtNombreTienda.setText(cl.getNombre());
+		txtDireccionTienda.setText(t1.getDireccion());
+		
+		cmbClientes.setModel(new DefaultComboBoxModel<Cliente>(t1.getClientes()));
+		defineCombo();
+		
+		txtNombreCliente.setText(t1.getClientes()[0].getNombre());
+		txtDni.setText(t1.getClientes()[0].getDni());
+		txtApellidosCliente.setText(t1.getClientes()[0].getApellidos());
+	}
+	
+	
+	private void defineCombo() {
+		
+		cmbClientes.addItemListener(new ItemListener() {
+
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if (e.getStateChange() == ItemEvent.SELECTED) {
+					Object item = e.getItem();
+					
+					if(item instanceof Cliente){
+						
+						Cliente c1=(Cliente) item;
+						txtDni.setText(c1.getDni());
+						txtNombreCliente.setText(c1.getNombre());
+						txtApellidosCliente.setText(c1.getApellidos());
+						
+					}
+					// do something with object
+
+					JOptionPane.showMessageDialog(frame, "Persona seleccionada" + e.getItem());
+				}
+
+			}
+
+		});
+		
+		cmbClientes.setRenderer(new DefaultListCellRenderer() {
+			@Override
+			public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+			super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+			if(value instanceof Cliente){
+			Cliente client = (Cliente) value;
+			setText(client.getNombre() + " " + client.getApellidos());
+			}
+			return this;
+			}
+		});
+		
+	}
+		
+	
+	
+	
+	
+	
+}
