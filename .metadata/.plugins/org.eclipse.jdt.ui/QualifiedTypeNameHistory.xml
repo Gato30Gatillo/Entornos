@@ -17,4 +17,6 @@
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionListener"/>
     <fullyQualifiedTypeName name="javax.swing.ListSelectionModel"/>
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionEvent"/>
+    <fullyQualifiedTypeName name="ejemploLibreria.modelo.Biblioteca"/>
+    <fullyQualifiedTypeName name="ejemploLibreria.modelo.Libro"/>
 </qualifiedTypeNameHistroy>

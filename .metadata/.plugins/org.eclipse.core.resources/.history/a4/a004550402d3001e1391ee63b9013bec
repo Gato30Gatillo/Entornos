@@ -1,0 +1,348 @@
+package ejemploLibreria;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+import javax.swing.border.LineBorder;
+
+import ejemploLibreria.modelo.Biblioteca;
+import ejemploLibreria.modelo.Libro;
+import ejemplosliistener.modelo.Persona;
+import ejemploTienda.modelo.Cliente;
+import ejemploTienda.modelo.Tienda;
+
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.JTextField;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JDialog;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class AppBiblioteca {
+
+   private JFrame frame;
+   private JTextField txtNombreBiblioteca;
+   private JTextField txtTitulo;
+   private JTextField txtNombreAutor;
+   private JTextField txtAnoPublicacion;
+   private JComboBox cmbLibros;
+   private JButton btnModificarBiblioteca;
+   private JButton btnModificarLibro;
+   
+   private boolean esInsertado=false;
+   private Libro libroInsertado=null;
+   private Biblioteca b1;
+   private JTextField txtEditorial;
+   private JTextField txtReferenciaBibliografica;
+
+   /**
+    * Launch the application.
+    */
+   public static void main(String[] args) {
+       EventQueue.invokeLater(new Runnable() {
+           public void run() {
+               try {
+                   AppBiblioteca window = new AppBiblioteca();
+                   window.frame.setVisible(true);
+               } catch (Exception e) {
+                   e.printStackTrace();
+               }
+           }
+       });
+   }
+   
+   
+
+   public boolean isEsInsertado() {
+       return esInsertado;
+   }
+
+
+
+   public void setEsInsertado(boolean esInsertado) {
+       this.esInsertado = esInsertado;
+   }
+
+
+
+   public Libro getLibroInsertado() {
+       return libroInsertado;
+   }
+
+
+
+   public void setLibroInsertado(Libro libroInsertado) {
+       this.libroInsertado = libroInsertado;
+   }
+
+
+
+   /**
+    * Create the application.
+    */
+   public AppBiblioteca() {
+       initialize();
+   }
+
+   /**
+    * Initialize the contents of the frame.
+    */
+   private void initialize() {
+       frame = new JFrame();
+       frame.setBounds(100, 100, 1442, 823);
+       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       frame.getContentPane().setLayout(null);
+
+       JPanel panelBiblioteca = new JPanel();
+       panelBiblioteca.setBorder(new LineBorder(new Color(0, 0, 0)));
+       panelBiblioteca.setBounds(107, 118, 612, 428);
+       frame.getContentPane().add(panelBiblioteca);
+       panelBiblioteca.setLayout(null);
+
+       JLabel lblNombreBiblioteca = new JLabel("Nombre de Biblioteca:");
+       lblNombreBiblioteca.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       lblNombreBiblioteca.setBounds(111, 54, 143, 22);
+       panelBiblioteca.add(lblNombreBiblioteca);
+
+       txtNombreBiblioteca = new JTextField();
+       txtNombreBiblioteca.setFont(new Font("Tahoma", Font.PLAIN, 12));
+       txtNombreBiblioteca.setBounds(264, 54, 300, 28);
+       panelBiblioteca.add(txtNombreBiblioteca);
+       txtNombreBiblioteca.setColumns(10);
+
+       btnModificarBiblioteca = new JButton("Modificar");
+       btnModificarBiblioteca.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       btnModificarBiblioteca.setBounds(200, 200, 150, 66);
+       panelBiblioteca.add(btnModificarBiblioteca);
+
+       JLabel lblLibros = new JLabel("Libros:");
+       lblLibros.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       lblLibros.setBounds(111, 103, 98, 22);
+       panelBiblioteca.add(lblLibros);
+
+       cmbLibros = new JComboBox();
+       cmbLibros.setBounds(323, 107, 187, 19);
+       panelBiblioteca.add(cmbLibros);
+
+       JLabel lblAplicacionBiblioteca = new JLabel("Aplicación Biblioteca");
+       lblAplicacionBiblioteca.setFont(new Font("Tahoma", Font.PLAIN, 22));
+       lblAplicacionBiblioteca.setBounds(552, 20, 264, 27);
+       frame.getContentPane().add(lblAplicacionBiblioteca);
+
+       JLabel lblBiblioteca = new JLabel("Biblioteca");
+       lblBiblioteca.setFont(new Font("Tahoma", Font.PLAIN, 18));
+       lblBiblioteca.setBounds(386, 72, 133, 27);
+       frame.getContentPane().add(lblBiblioteca);
+
+       JLabel lblLibro = new JLabel("Libro");
+       lblLibro.setFont(new Font("Tahoma", Font.PLAIN, 18));
+       lblLibro.setBounds(1080, 88, 113, 17);
+       frame.getContentPane().add(lblLibro);
+
+       JPanel panelLibro = new JPanel();
+       panelLibro.setBorder(new LineBorder(new Color(0, 0, 0)));
+       panelLibro.setBounds(806, 121, 573, 425);
+       frame.getContentPane().add(panelLibro);
+       panelLibro.setLayout(null);
+
+       JLabel lblTitulo = new JLabel("Titulo:");
+       lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       lblTitulo.setBounds(78, 38, 128, 30);
+       panelLibro.add(lblTitulo);
+
+       txtTitulo = new JTextField();
+       txtTitulo.setFont(new Font("Tahoma", Font.PLAIN, 12));
+       txtTitulo.setBounds(302, 46, 205, 22);
+       panelLibro.add(txtTitulo);
+       txtTitulo.setColumns(10);
+
+       JLabel lblNombreAutor = new JLabel("Nombre del Autor:");
+       lblNombreAutor.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       lblNombreAutor.setBounds(78, 99, 165, 30);
+       panelLibro.add(lblNombreAutor);
+
+       txtNombreAutor = new JTextField();
+       txtNombreAutor.setFont(new Font("Tahoma", Font.PLAIN, 12));
+       txtNombreAutor.setColumns(10);
+       txtNombreAutor.setBounds(302, 107, 205, 22);
+       panelLibro.add(txtNombreAutor);
+
+       JLabel lblAnoPublicacion = new JLabel("Año de publicacion:");
+       lblAnoPublicacion.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       lblAnoPublicacion.setBounds(78, 157, 165, 30);
+       panelLibro.add(lblAnoPublicacion);
+
+       txtAnoPublicacion = new JTextField();
+       txtAnoPublicacion.setFont(new Font("Tahoma", Font.PLAIN, 12));
+       txtAnoPublicacion.setColumns(10);
+       txtAnoPublicacion.setBounds(302, 165, 205, 22);
+       panelLibro.add(txtAnoPublicacion);
+
+       btnModificarLibro = new JButton("Modificar");
+       btnModificarLibro.addActionListener(new ActionListener() {
+           public void actionPerformed(ActionEvent e) {
+               
+               if (cmbLibros.getSelectedItem() instanceof Libro) {
+                   
+                   
+                   Libro lb = (Libro) cmbLibros.getSelectedItem();
+                   
+                   lb.setTitulo(txtTitulo.getText());
+                   lb.setAutor(txtNombreAutor.getText());
+                   lb.setAnoPublicacion(txtAnoPublicacion.getText());
+                   lb.setEditorial(txtEditorial.getText());
+                   lb.setReferenciaBibliografica(txtReferenciaBibliografica.getText());
+                   panelBiblioteca.updateUI();
+                   
+                   
+               }
+               
+               
+           }
+       });
+       btnModificarLibro.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       btnModificarLibro.setBounds(198, 356, 145, 47);
+       panelLibro.add(btnModificarLibro);
+       
+       JButton btnInsertarLibro = new JButton("Insertar");
+       btnInsertarLibro.addActionListener(
+               
+               (e) -> {                
+               
+               InsertarLibro dialog = new InsertarLibro();
+               dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+               dialog.setAppTienda(this);
+               dialog.setModal(true);
+               dialog.setVisible(true);
+               
+               Cliente cliente;
+               
+               if (this.esInsertado) {
+               
+                   
+                   t1.addCliente(this.clienteInsertado);
+                   panelBiblioteca.updateUI();
+                   
+                   cmbLibros.setModel(new DefaultComboBoxModel<Cliente>(t1.getClientes()));
+                   
+               
+               }
+               
+           }
+       );
+       btnInsertarLibro.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       btnInsertarLibro.setBounds(43, 356, 145, 47);
+       panelLibro.add(btnInsertarLibro);
+       
+       txtEditorial = new JTextField();
+       txtEditorial.setText((String) null);
+       txtEditorial.setFont(new Font("Tahoma", Font.PLAIN, 12));
+       txtEditorial.setColumns(10);
+       txtEditorial.setBounds(302, 217, 205, 22);
+       panelLibro.add(txtEditorial);
+       
+       JLabel lblEditorial = new JLabel("Editorial:");
+       lblEditorial.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       lblEditorial.setBounds(78, 209, 165, 30);
+       panelLibro.add(lblEditorial);
+       
+       txtReferenciaBibliografica = new JTextField();
+       txtReferenciaBibliografica.setText((String) null);
+       txtReferenciaBibliografica.setFont(new Font("Tahoma", Font.PLAIN, 12));
+       txtReferenciaBibliografica.setColumns(10);
+       txtReferenciaBibliografica.setBounds(302, 286, 205, 22);
+       panelLibro.add(txtReferenciaBibliografica);
+       
+       JLabel lblReferenciaBibliografica = new JLabel("Referencia Bibliografica:");
+       lblReferenciaBibliografica.setFont(new Font("Tahoma", Font.PLAIN, 14));
+       lblReferenciaBibliografica.setBounds(78, 278, 165, 30);
+       panelLibro.add(lblReferenciaBibliografica);
+
+       bootStrap();
+   }
+
+   private void bootStrap() {
+
+       Libro l1 = new Libro("Cien años de soledad","Gabriel Garcia Marques", 1967,"Sudamerica","858.67.M566");
+       Libro l2 = new Libro("La tia Julia y el escribidor","Mario Vargas Llosa", 1977,"Seix Barra","868.23.L567");
+
+       b1 = new Biblioteca("Biblioteca Ejemplo");
+
+       b1.añadirLibro(l1);
+       b1.añadirLibro(l2);
+
+       txtNombreBiblioteca.setText(b1.getNombre());
+
+       cmbLibros.setModel(new DefaultComboBoxModel<Cliente>(t1.getClientes()));
+
+       defineCombo();
+       
+       txtTitulo.setText(b1.getNombre()[0].getTitulo());        
+       txtNombreAutor.setText(b1.getNombre()[0].getAutor());
+       txtAnoPublicacion.setText(b1.getNombre()[0].getAnoPublicacion());
+       
+       
+
+   }
+
+   private void defineCombo() {
+
+       cmbLibros.setRenderer(new DefaultListCellRenderer() {
+           @Override
+           public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected,
+                   boolean cellHasFocus) {
+               super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+               if (value instanceof Libro) {
+                   Libro libro = (Libro) value;
+                   setText(libro.getAutor() + " " + libro.getTitulo());
+               }
+               return this;
+           }
+       });
+
+       cmbLibros.addItemListener(new ItemListener() {
+
+           @Override
+           public void itemStateChanged(ItemEvent e) {
+               if (e.getStateChange() == ItemEvent.SELECTED) {
+                   Object item = e.getItem();
+
+                   if (item instanceof Libro) {
+
+                       Libro lb = (Libro) item;
+                       txtTitulo.setText(lb.getTitulo());
+                       txtNombreAutor.setText(lb.getAutor());
+                       txtAnoPublicacion.setText(lb.getAnoPublicacion());
+                       txtEditorial.setText(lb.getEditorial());
+                       txtReferenciaBibliografica.setText(lb.getReferenciaBibliografica());
+                       
+
+                   }
+                   // do something with object
+
+                   
+               }
+
+           }
+
+       });
+
+       
+
+   }
+}
