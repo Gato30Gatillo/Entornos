@@ -22,3 +22,4 @@
 2024-02-23 10:16:34,386 [ForkJoinPool.commonPool-worker-1] WARN  jetbrains.exodus.io.FileDataWriter - Can't open directory channel. Log directory fsync won't be performed.
 2024-02-23 10:16:34,707 [ForkJoinPool.commonPool-worker-1] INFO  j.exodus.env.EnvironmentImpl - Exodus environment created: C:\Users\1DAM\.sonarlint\xodus-local-only-issue-store17312111042782948739
 2024-02-23 10:24:11,409 [Worker-30: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2024-02-23 13:04:42,285 [ForkJoinPool.commonPool-worker-75] INFO  j.exodus.util.CompressBackupUtil - Backup file "local_only_issue_backup2024-02-23-13-04-42.tar.gz" created.

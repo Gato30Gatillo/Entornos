@@ -1,0 +1,52 @@
+
+c
+java:S37402"/Provide the parametrized type for this generic.b ad23634b394e5f182ae9576cf7eed86ch
+c
+java:S37403"/Provide the parametrized type for this generic.b 0fe3c91afda84502586ba4233eef4f1dh
+d
+java:S3740Â"/Provide the parametrized type for this generic.b 06e974aeb7edb66ca774fba29b98f5bch
+d
+java:S3740ã"/Provide the parametrized type for this generic.b 15b3b95c58e9930d37eaf20dfacf5d74h
+d
+java:S3740ç"/Provide the parametrized type for this generic.b 0fe3c91afda84502586ba4233eef4f1dh
+ç
+java:S22938"YReplace the type specification in this constructor call with the diamond operator ("<>").b 8b04e23416a68af04d67a790282e98c1h
+{
+java:S1192i"GDefine a constant instead of duplicating this literal "Tahoma" 6 times.b 271e64d070b12fd41baa5a63b6c3bb4dh
+{
+java:S1192:"GDefine a constant instead of duplicating this literal "Carlos" 3 times.b 38d9bd70eddfafb4d9e4d653329358ceh
+\
+java:S1604K"(Make this anonymous inner class a lambdab ea52882b4555d68253c21906fed1a7f9h
+]
+java:S1604æ"(Make this anonymous inner class a lambdab 65b17b751d67188db4a2eea102b1f843h
+]
+java:S1604ı"(Make this anonymous inner class a lambdab cac1c235b4c24d9e903616e5b7292df5h
+]
+java:S1604ì"(Make this anonymous inner class a lambdab 14fde4166a253c087b246198f010a34ah
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b 134b156a76dcc9a590c2cee825b75b12h
+ã
+java:S14502"WRemove the "comboBox" field and declare it as a local variable in the relevant methods.b 9ae1381b12869863de7558f3e409f76fh
+å
+java:S1450/"XRemove the "lblGenero" field and declare it as a local variable in the relevant methods.b 23ed52e1a2b72862ae07d8fa95a94a7fh
+ì
+java:S14501"_Remove the "lblPersonascombo" field and declare it as a local variable in the relevant methods.b d4ed69a550fc1dc470dd55a9d1fb6b53h
+}
+java:S3252d"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".b d3eba7aaff6ac48405695200513a5198h
+g
+java:S1135å"2Complete the task associated to this TODO comment.b 36364ec9aa2f0995d283c1c6a92d2e5ch
+g
+java:S1135î"2Complete the task associated to this TODO comment.b 36364ec9aa2f0995d283c1c6a92d2e5ch
+g
+java:S1135ö"2Complete the task associated to this TODO comment.b 36364ec9aa2f0995d283c1c6a92d2e5ch
+g
+java:S1135¬"2Complete the task associated to this TODO comment.b 36364ec9aa2f0995d283c1c6a92d2e5ch
+|
+java:S6201Ì"GReplace this instanceof check and cast with 'instanceof Persona person'b 9b5489bfa7754f5baf829aa8f8d1eacch
+m
+java:S1854˙"8Remove this useless assignment to local variable "item".b a764d231e1ccec8f14755f844c5a018dh
+^
+java:S1481˙")Remove this unused "item" local variable.b 447b7147e84be512208dcc0995d67ebch
+g
+java:S1135ò"2Complete the task associated to this TODO comment.b 36364ec9aa2f0995d283c1c6a92d2e5ch
+|
+java:S6201£"GReplace this instanceof check and cast with 'instanceof Persona person'b 9b5489bfa7754f5baf829aa8f8d1eacch

@@ -1,0 +1,7 @@
+
+Ú
+java:S1598"ΩThis file "Cliente.java" should be located in "iesjandula\proyectounidad4\arraysdeobjetos\agregacion" directory, not in "C:\Users\1DAM\Desktop\Entornos\Workspaceunidad2ED\Ventanas2024\src".b 36849e95d2e8b3a624403f95e376ff73h
+ç
+java:S12105"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.b 9c6977aa3ce5b94580e3f19b2777d663h
+â
+java:S1201,"UEither override Object.equals(Object), or rename the method to prevent any confusion.b 51c3f59625962b899c03595d6cdfb284h

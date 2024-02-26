@@ -1,0 +1,36 @@
+
+a
+java:S1199L"-Extract this nested code block into a method.b f95b70fdc3088560732a5ac135644506h
+a
+java:S1199R"-Extract this nested code block into a method.b f95b70fdc3088560732a5ac135644506h
+a
+java:S1199Z"-Extract this nested code block into a method.b f95b70fdc3088560732a5ac135644506h
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b bd1f8a54533a679ffb63ba7cdc8df00bh
+€
+java:S3252%"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".b 704073f79b13c201cb964af8eea18b6eh
+‚
+java:S1192N"GDefine a constant instead of duplicating this literal "Tahoma" 6 times.8ÄüĞ­İ1b 271e64d070b12fd41baa5a63b6c3bb4dh
+h
+java:S1199h"-Extract this nested code block into a method.8ÄüĞ­İ1b f95b70fdc3088560732a5ac135644506h
+h
+java:S1199n"-Extract this nested code block into a method.8ÄüĞ­İ1b f95b70fdc3088560732a5ac135644506h
+h
+java:S1199v"-Extract this nested code block into a method.8ÄüĞ­İ1b f95b70fdc3088560732a5ac135644506h
+h
+java:S1199{"-Extract this nested code block into a method.8ÄüĞ­İ1b f95b70fdc3088560732a5ac135644506h
+h
+java:S1199`"-Extract this nested code block into a method.8ÄüĞ­İ1b f95b70fdc3088560732a5ac135644506h
+i
+java:S1199"-Extract this nested code block into a method.8ÄüĞ­İ1b f95b70fdc3088560732a5ac135644506h
+m
+java:S1948"2Make "clienteInsertado" transient or serializable.8ÄüĞ­İ1b dca46e82746b031b21ff71b0b46a7ddfh
+c
+java:S1604}"(Make this anonymous inner class a lambda8“Ü®İ1b 65b17b751d67188db4a2eea102b1f843h
+d
+java:S1604’"(Make this anonymous inner class a lambda8“Ü®İ1b 65b17b751d67188db4a2eea102b1f843h
+¢
+java:S4165E"gRemove this useless assignment; "appTienda" already holds the assigned value along all execution paths.8“Ü®İ1b dbcb79db71bd401bd0a3d14ce10eb6fch
+f
+java:S1948"+Make "appTienda" transient or serializable.8“Ü®İ1b dc8120be20fa8741fd803aa4772080b5h
+j
+java:S1656E"/Remove or correct this useless self-assignment.8“Ü®İ1b 43ec3e5dee6e706af7766fffea512721h

@@ -1,0 +1,36 @@
+
+c
+java:S3740+"/Provide the parametrized type for this generic.b ad23634b394e5f182ae9576cf7eed86ch
+d
+java:S3740“"/Provide the parametrized type for this generic.b ad23634b394e5f182ae9576cf7eed86ch
+|
+java:S1192t"HDefine a constant instead of duplicating this literal "Tahoma" 17 times.b 271e64d070b12fd41baa5a63b6c3bb4dh
+\
+java:S16047"(Make this anonymous inner class a lambdab ea52882b4555d68253c21906fed1a7f9h
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b bd1f8a54533a679ffb63ba7cdc8df00bh
+}
+java:S3252j"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".b d3eba7aaff6ac48405695200513a5198h
+d
+java:S1604®"(Make this anonymous inner class a lambda8é‰“«İ1b cac1c235b4c24d9e903616e5b7292df5h
+
+java:S1450-"bRemove the "btnModificarCliente" field and declare it as a local variable in the relevant methods.8é‰“«İ1b 8ead9197f695ed0f6f1055f80a28770eh
+œ
+java:S1450,"aRemove the "btnModificarTienda" field and declare it as a local variable in the relevant methods.8é‰“«İ1b 7d73d3ec1f888bc8a80b17eb338e9eb8h
+
+java:S6201µ"CReplace this instanceof check and cast with 'instanceof Cliente cl'8óµ«İ1b 15b9f122b0366ae2b86083acf0c235abh
+ƒ
+java:S6201¦"GReplace this instanceof check and cast with 'instanceof Cliente client'8òë¢«İ1b bdb3bbee88aa9f2a9b49b2408ca5b7fbh
+x
+java:S1128"=Remove this unused import 'ejemplosliistener.modelo.Persona'.8òë¢«İ1b 68ffa820a72086692df785fb14b3f4d3h
+d
+java:S1604Î"(Make this anonymous inner class a lambda8Œ³ù¬İ1b 65b17b751d67188db4a2eea102b1f843h
+
+java:S6201Ñ"CReplace this instanceof check and cast with 'instanceof Cliente cl'8Œ³ù¬İ1b 64505c917871ad43615ebc651faf7aeah
+k
+java:S1611è"/Remove the parentheses around the "e" parameter8ÜëĞ­İ1b 84c40473414caf2ed4a7b1283e48bbf4h
+ˆ
+java:S3252ë"LUse static access with "javax.swing.WindowConstants" for "DISPOSE_ON_CLOSE".8ÜëĞ­İ1b 704073f79b13c201cb964af8eea18b6eh
+h
+java:S1481ğ",Remove this unused "cliente" local variable.8ë¨Á®İ1b 4983a0ab83ed86e0e7213c8783940193h
+o
+java:S1128	"4Remove this unused import 'javax.swing.JOptionPane'.8Ú®İ1b d10424ab592bd7429f9e347040b7ebb0h

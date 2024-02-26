@@ -1,0 +1,6 @@
+
+ç	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.b 21b4d1dedbfa801f28f7aa7b2377385ah
+ç
+java:S12105"YOverride "equals(Object obj)" to comply with the contract of the "compareTo(T o)" method.b 9c6977aa3ce5b94580e3f19b2777d663h
+â
+java:S1201,"UEither override Object.equals(Object), or rename the method to prevent any confusion.b 51c3f59625962b899c03595d6cdfb284h
