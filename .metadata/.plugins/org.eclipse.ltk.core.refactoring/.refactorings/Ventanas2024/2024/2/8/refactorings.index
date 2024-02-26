@@ -1,1 +1,11 @@
 1708680449310	Move compilation units
+1708769020788	Copy package
+1708769037470	Copy package
+1708769045085	Delete elements
+1708769134531	Rename type 'AppTienda'
+1708769157361	Rename type 'InsertarCliente'
+1708772089852	Delete element
+1708772328237	Rename type 'InsertarLibro'
+1708772339002	Rename compilation unit 'Insertar.java'
+1708772349684	Delete element
+1708772362812	Rename type 'InsertarLibros'

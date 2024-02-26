@@ -15,9 +15,14 @@
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionListener"/>
     <fullyQualifiedTypeName name="javax.swing.ListSelectionModel"/>
     <fullyQualifiedTypeName name="javax.swing.event.ListSelectionEvent"/>
+<<<<<<< HEAD
     <fullyQualifiedTypeName name="ejemploTienda.modelo.Tienda"/>
     <fullyQualifiedTypeName name="javax.swing.DefaultComboBoxModel"/>
     <fullyQualifiedTypeName name="javax.swing.JDialog"/>
     <fullyQualifiedTypeName name="ejemploTienda.modelo.Cliente"/>
     <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+=======
+    <fullyQualifiedTypeName name="ejemploLibreria.modelo.Biblioteca"/>
+    <fullyQualifiedTypeName name="ejemploLibreria.modelo.Libro"/>
+>>>>>>> 43165d9ded0f0c3b14d89656aac398e68f5dba0e
 </qualifiedTypeNameHistroy>
